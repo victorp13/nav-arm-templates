@@ -102,6 +102,20 @@
                 "Description": "Select the NAV Docker Image to deploy. See https://hub.docker.com/r/microsoft/dynamics-nav/ for a list of public images."
             }
         },
+        "registryUsername": {
+            "type": "string",
+            "defaultValue": "mcr.microsoft.com/dynamicsnav:w1",
+            "metadata": {
+                "Description": "Select the NAV Docker Image to deploy. See https://hub.docker.com/r/microsoft/dynamics-nav/ for a list of public images."
+            }
+        },        
+        "registryPassword": {
+            "type": "string",
+            "defaultValue": "mcr.microsoft.com/dynamicsnav:w1",
+            "metadata": {
+                "Description": "Select the NAV Docker Image to deploy. See https://hub.docker.com/r/microsoft/dynamics-nav/ for a list of public images."
+            }
+        },
         "LicenseFileUri": {
             "type": "string",
             "defaultValue": "",
@@ -221,8 +235,8 @@
 		"azureSqlAdminUsername": "sqladmin",
         "adminPassword": "[parameters('adminPassword')]",
         "navDockerImage": "[trim(parameters('navDockerImage'))]",
-        "registryUsername": "",
-        "registryPassword": "",
+        "registryUsername": "[trim(parameters('registryUsername'))]",
+        "registryPassword": "[trim(parameters('registryPassword'))]",
         "LicenseFileUri": "[parameters('LicenseFileUri')]",
         "SQLServerType": "SQLExpress",
         "AppBacpacUri": "",
